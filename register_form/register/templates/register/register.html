@@ -1,0 +1,13 @@
+{% load bootstrap4 %}
+<div>
+    <form action="{% url 'register:register' %}" method="POST">
+    {% csrf_token %}
+
+    <fieldset>
+        <legend><h1>수련회 신청서 작성</h1></legend>
+        {% if error_message %} <p><strong>{{ error_message }}</strong></p> {% endif %}
+
+    </fieldset>
+    <input type="submit" value="제출">
+    </form>
+</div>
