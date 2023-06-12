@@ -10,7 +10,7 @@ class IndexView(generic.TemplateView):
     template_name = "register/register.html"
     
 class RegisteredView(generic.TemplateView):
-    template_name = "register/registered.html"
+    template_name = "registered/registered.html"
 
 def submitted(request):
     if request.method == 'POST':
