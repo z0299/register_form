@@ -7,6 +7,9 @@ from .models import Register
 from .forms import RegisterForm
 
 class IndexView(generic.TemplateView):
+    template_name = "index/index.html"
+
+class RegisterView(generic.TemplateView):
     template_name = "register/register.html"
     
 class RegisteredView(generic.TemplateView):
