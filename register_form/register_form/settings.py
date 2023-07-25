@@ -15,7 +15,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+ROOT_DIR = os.path.dirname(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap4'
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +122,10 @@ USE_TZ = True
 STATIC_URL = '/static/dist/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static/dist/',
+    # os.path.join(BASE_DIR, "static/dist"),
 ]
+
+STATIC_ROOT = os.path.join(ROOT_DIR, '.static_root')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
